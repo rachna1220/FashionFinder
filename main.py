@@ -2,14 +2,20 @@ import os
 import pickle
 import gdown
 file_id="1z1QdqsOykMh0lBkQSywvDvsyzk-K0apU"
-url=f"https://drive.google.com/uc?identifier={file_id}"
+url = f"https://drive.google.com/uc?id={file_id}"
+
 output="embedding.pkl"
+filenames_file_id = "18lYMqLzwiKUi7adALP1fLlPWj8rIhTi8"  # replace with your file ID
+
+filenames_url = f"https://drive.google.com/uc?id={filenames_file_id}"  # use uc?id=
+filenames_output = "filenames.pkl"
+
 if not os.path.exists(output):
     gdown.download(url, output, quiet=False)
 
-if not os.path.exists('filenames.pkl'):
-    url = "https://drive.google.com/file/d/18lYMqLzwiKUi7adALP1fLlPWj8rIhTi8/view?usp=sharing"
-    gdown.download(url, 'filenames.pkl', quiet=False)
+
+if not os.path.exists(filenames_output):
+    gdown.download(filenames_url, filenames_output, quiet=False)
 
 import streamlit as st
 from PIL import Image
