@@ -7,6 +7,9 @@ output="embedding.pkl"
 if not os.path.exists(output):
     gdown.download(url, output, quiet=False)
 
+if not os.path.exists('filenames.pkl'):
+    url = "https://drive.google.com/file/d/18lYMqLzwiKUi7adALP1fLlPWj8rIhTi8/view?usp=sharing"
+    gdown.download(url, 'filenames.pkl', quiet=False)
 
 import streamlit as st
 from PIL import Image
