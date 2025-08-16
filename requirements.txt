@@ -1,0 +1,8 @@
+streamline
+tensorflow
+numpy
+opencv-python
+scikit-learn
+pillow
+pickle-mixin
+gdown
